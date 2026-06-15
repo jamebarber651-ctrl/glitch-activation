@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitch Activation</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            text-align: center; 
+            background-color: #f4f4f4; 
+        }
+        .container { 
+            background-color: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        }
+        h1 { color: #333; }
+        .bitcoin-address { 
+            background-color: #f8f8f8; 
+            padding: 15px; 
+            border: 1px dashed #ccc; 
+            font-family: monospace; 
+            word-break: break-all; 
+            margin: 20px 0; 
+            font-size: 1.1em; 
+        }
+        .notice { 
+            background-color: #fff3cd; 
+            color: #856404; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin: 20px 0; 
+            font-size: 0.9em; 
+        }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            margin: 20px 0; 
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Glitch Activation</h1>
+        
+        <!-- Replace this with your image URL later -->
+        <img src="YOUR_IMAGE_URL_OR_PATH_HERE" alt="Payment Image">
+        
+        <p><strong>Description:</strong> “Payment for [specific product/service].”</p>
+        
+        <h2>Bitcoin Address</h2>
+        <div class="bitcoin-address">
+            bc1q6c72h7j8dcp2elnleazw8w4a5v9w596arp7905
+        </div>
+        
+        <p><strong>Important Notice:</strong></p>
+        <div class="notice">
+            Please verify all payment details before sending funds. Cryptocurrency transactions are generally irreversible.
+        </div>
+        
+        <p>Thank you for your payment!</p>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addressDiv = document.querySelector('.bitcoin-address');
+            addressDiv.style.cursor = 'pointer';
+            addressDiv.title = 'Click to copy address';
+            addressDiv.addEventListener('click', function() {
+                const address = this.textContent.trim();
+                navigator.clipboard.writeText(address).then(() => {
+                    const original = this.textContent;
+                    this.textContent = '✅ Copied!';
+                    setTimeout(() => { this.textContent = original; }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
